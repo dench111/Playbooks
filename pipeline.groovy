@@ -5,7 +5,7 @@ pipeline {
     }
   }
   stages {
-    stage("STAGE_#1") {
+    stage("*****STAGE_1*****") {
       steps {
         script {
           def workspace = "/var/lib/jenkins/workspace/InstallDocker"
@@ -15,7 +15,7 @@ pipeline {
       }
      }
     }
-    stage("STAGE_#2") {
+    stage("*****STAGE_2*****") {
       steps {
         script {
           sh "echo "THIS IS STAGE_#2""
