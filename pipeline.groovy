@@ -5,22 +5,20 @@ pipeline {
     }
   }
   stages {
-    stage("Install env and elasticsearch on servers") {
+    stage("STAGE_#1") {
       steps {
         script {
-          def workspace = "/var/lib/jenkins/workspace/Ansible_Git"
+          def workspace = "/var/lib/jenkins/workspace/InstallDocker"
           sh "chmod ugo+rwx $workspace/*"
           sh "ansible -m setup servers > $workspace/Ansible_env_variables.txt"
-          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/Elastic-install-pb.yml"
+          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/install-docker.yaml.yml"
       }
      }
     }
-    stage("Congigurating elasticsearch nodes") {
+    stage("STAGE_#2") {
       steps {
         script {
-          def workspace = "/var/lib/jenkins/workspace/Ansible_Git"
-          sh "chmod ugo+rwx $workspace/*"
-          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/Elastic_Nodes-conf-pb.yml"
+          sh "echo "THIS IS STAGE_#2""
        }        
      }
     }
