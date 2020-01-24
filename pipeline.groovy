@@ -11,7 +11,7 @@ pipeline {
           def workspace = "/var/lib/jenkins/workspace/InstallDocker"
           sh "chmod ugo+rwx $workspace/*"
           sh "ansible -m setup servers > $workspace/Ansible_env_variables.txt"
-          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/install-docker.yaml.yml"
+          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/Docker/install-docker.yaml"
       }
      }
     }
