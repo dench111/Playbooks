@@ -18,7 +18,7 @@ pipeline {
     stage("*****STAGE_2*****") {
       steps {
         script {
-          sh "echo "THIS IS STAGE_#2""
+          sh "echo "THIS IS STAGE_2""
        }        
      }
     }
